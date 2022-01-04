@@ -1,0 +1,9 @@
+
+
+SCREEN_SIZE = (300, 600)
+CAR_SIZE = (50, 100)
+HEART_SIZE = (50, 50)
+LOGO_SIZE = (300, 200)
+TOP_BAR_ICON_SIZE = (25, 25)
+
+BACKGROUND_PATH = "images/way.png"
