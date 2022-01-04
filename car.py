@@ -3,8 +3,6 @@ import os
 from constants import SCREEN_SIZE, CAR_SIZE
 import random
 
-from line import Line
-
 
 class Car(pygame.sprite.Sprite):
     def __init__(self, x, y, isEnemy) -> None:

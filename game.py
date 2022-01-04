@@ -3,8 +3,7 @@ from pygame.event import Event
 from car import Car
 from background import Background
 from heart import Heart
-from constants import CAR_SIZE, SCREEN_SIZE, LOGO_SIZE, TOP_BAR_ICON_SIZE, HEART_SIZE
-from line import Line
+from constants import CAR_SIZE, SCREEN_SIZE, LOGO_SIZE, TOP_BAR_ICON_SIZE
 import pygame
 import random
 import os
@@ -18,7 +17,6 @@ class Game:
             Background(0),
             Background(+SCREEN_SIZE[1])
         )
-        self.lines = [Line(), Line(), Line()]
         self.car_line_index = 1
         self.car = pygame.sprite.GroupSingle(Car((self.car_line_index * 100) + 25, SCREEN_SIZE[1] - CAR_SIZE[1] * 2, False))
         self.cars = pygame.sprite.Group()
