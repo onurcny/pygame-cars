@@ -30,7 +30,7 @@ class Game:
         self.car_spawn_control = 0
         self.hearts = 3
         self.level = 1
-        self.max_level = 3
+        self.max_level = 4
         self.level_control = 0
         self.score = 0
         self.win = False
@@ -55,7 +55,7 @@ class Game:
                 self.level_control = self.level_control + 1
             self.score = self.score + 1
 
-        if self.level_control == self.level * 30:
+        if self.level_control == self.level * 25:
             self.level_control = 0
             self.level= self.level + 1
 
@@ -157,12 +157,20 @@ class Game:
             bg.Move(self.speed)
         self.backgrounds.draw(self.screen)
         self.car.draw(self.screen)
+
+        text = self.font_m.render("Press space key to start...", True, (255, 255, 255))
+        rect = text.get_rect(center=(SCREEN_SIZE[0] / 2, SCREEN_SIZE[1] / 2))
+        self.screen.blit(text, rect)
+
+        text = self.font_l.render("Win!", True, (255, 255, 255))
+        rect = text.get_rect(center=(SCREEN_SIZE[0] / 2, 200))
+        self.screen.blit(text, rect)
+        
         for event in events:
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
                     self.__init__(self.screen)
                     self.start = True
-        print("win")
 
     def GameEnd(self, events: List[Event]):
         for bg in self.backgrounds:
